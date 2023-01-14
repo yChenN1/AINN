@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>StarGANv2-VC | StarGANv2-VC Audio Demo</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="StarGANv2-VC" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Yinghao Aaron Li, Ali Zare, Nima Mesgarani" />
+<meta property="og:description" content="Yinghao Aaron Li, Ali Zare, Nima Mesgarani" />
+<link rel="canonical" href="https://starganv2-vc.github.io/" />
+<meta property="og:url" content="https://starganv2-vc.github.io/" />
+<meta property="og:site_name" content="StarGANv2-VC Audio Demo" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="StarGANv2-VC" />
+<script type="application/ld+json">
+{"description":"Yinghao Aaron Li, Ali Zare, Nima Mesgarani","url":"https://starganv2-vc.github.io/","@type":"WebSite","headline":"StarGANv2-VC","name":"StarGANv2-VC Audio Demo","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6fd387539d4d1b086327bfe8b188aebaa71e5c02">
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">StarGANv2-VC Audio Demo</h1>
+      <h2 class="project-tagline">Yinghao Aaron Li, Ali Zare, Nima Mesgarani</h2>
+        <a href="https://arxiv.org/abs/2107.10394" class="btn">View on arXiv</a>
+        <a href="https://github.com/yl4579/StarGANv2-VC" class="btn">GitHub Repo</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="starganv2-vc">StarGANv2-VC</h1>
+
+<video width="720" height="480" controls="" style="display:block; margin-left: auto; margin-right: auto;">
+<source type="video/mp4" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/summary.mp4" />
+</video>
+
+<p>We present an unsupervised non-parallel many-to-many voice conversion (VC) method using a generative adversarial network (GAN) called StarGAN v2. Using a combination of adversarial source classifier loss and perceptual loss, our model significantly outperforms previous VC models. Although our model is trained only with 20 English speakers, it generalizes to a variety of voice conversion tasks, such as any-to-many, cross-lingual, and singing conversion. Using a style encoder, our framework can also convert plain reading speech into stylistic speech, such as emotional and falsetto speech. Subjective and objective evaluation experiments on a non-parallel many-to-many voice conversion task revealed that our model produces natural sounding voices, close to the sound quality of state-of-the-art text-to-speech (TTS) based voice conversion methods without the need for text labels. Moreover, our model is completely convolutional and with a faster-than-real-time vocoder such as Parallel WaveGAN can perform real-time voice conversion.</p>
+
+<hr />
+
+<h2 id="vctk-dataset">VCTK Dataset</h2>
+<p>All of the following audios are converted using <strong>a single model trained on 20 speakers from VCTK dataset</strong>. For a fair comparison to the baseline models, all audios are downsampled to 16k Hz. We demonstrate four types of conversion schemes: many-to-many, any-to-many, cross-lingual and singing conversion.</p>
+
+<p><strong>All utterances are partially or completely unseen during training, and the results are uncurated (NOT cherry-picked) unless otherwise specified</strong>.</p>
+
+<p>For more audio samples, please go to our survey used for MOS evaluation <a href="https://survey.alchemer.com/s3/6266556/SoundQuality2">here</a>.  You may have to randomly select some answers before proceeding to the next page.</p>
+
+<hr />
+
+<h3 id="many-to-many-conversion">Many-to-Many Conversion</h3>
+
+<p>The converted samples using AUTO-VC are directly taken from the survey above. We use different sources for different models in the survey to prevent the raters from finding out which sample is the ground truth, the audio clips shown below are converted from sources for AUTO-VC, which are different from those shown in the survey.</p>
+
+<h4 id="female-to-female">Female to Female</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Sample 1 (p229 → p236)</th>
+      <th style="text-align: center">Sample 2 (p231 → p230)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2F/p229xp236/source.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2F/p231xp230/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2F/p229xp236/target.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2F/p231xp230/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>AUTO-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2F/p229xp236/autovc.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2F/p231xp230/autovc.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>StarGANv2-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2F/p229xp236/starganv2.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2F/p231xp230/starganv2.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="female-to-male">Female to Male</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Sample 1 (p225 → p259)</th>
+      <th style="text-align: center">Sample 2 (p244 → p243)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2M/p225xp259/source.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2M/p244xp243/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2M/p225xp259/target.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2M/p244xp243/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>AUTO-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2M/p225xp259/autovc.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2M/p244xp243/autovc.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>StarGANv2-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2M/p225xp259/starganv2.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/F2M/p244xp243/starganv2.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="male-to-female">Male to Female</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Sample 1 (p226 → p233)</th>
+      <th style="text-align: center">Sample 2 (p232 → p236)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2F/p226xp233/source.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2F/p232xp236/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2F/p226xp233/target.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2F/p232xp236/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>AUTO-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2F/p226xp233/autovc.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2F/p232xp236/autovc.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>StarGANv2-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2F/p226xp233/starganv2.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2F/p232xp236/starganv2.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="male-to-male">Male to Male</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Sample 1 (p243 → p254)</th>
+      <th style="text-align: center">Sample 2 (p259 → p273)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2M/p243xp254/source.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2M/p259xp273/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2M/p243xp254/target.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2M/p259xp273/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>AUTO-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2M/p243xp254/autovc.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2M/p259xp273/autovc.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>StarGANv2-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2M/p243xp254/starganv2.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Seen/M2M/p259xp273/starganv2.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h3 id="any-to-many-conversion">Any-to-Many Conversion</h3>
+
+<p>Our model can also convert from speakers unseen during training. One sample is shown for each case of any-to-many conversion.</p>
+
+<h4 id="female-to-female-1">Female to Female</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">p280 → p228</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/F2F/p280xp228/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/F2F/p280xp228/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/F2F/p280xp228/converted.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="female-to-male-1">Female to Male</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">p267 → p227</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/F2M/p267xp227/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/F2M/p267xp227/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/F2M/p267xp227/converted.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="male-to-female-1">Male to Female</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">p286 → p244</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/M2F/p286xp244/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/M2F/p286xp244/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/M2F/p286xp244/converted.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="male-to-male-1">Male to Male</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">p287 → p273</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/M2M/p287xp273/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/M2M/p287xp273/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Unseen/M2M/p287xp273/converted.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="cross-lingual-conversion">Cross-lingual Conversion</h3>
+
+<p>We show that our model is able to convert to any language from unseen input speakers, even though the model is trained <strong>only on English data with English ASR perceptual loss</strong>. We use Korean, Japanese and Mandarin as example languages.</p>
+
+<h4 id="korean">Korean</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Korean male → p244</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Korean/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Korean/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Korean/p244.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="japanese">Japanese</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Japanese male → p228</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Japanense/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Japanense/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Japanense/p228.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="mandarin">Mandarin</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Mandarin female → p254</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Mandarin/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Mandarin/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Crosslingual/Mandarin/p254.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="singing-conversion">Singing Conversion</h3>
+
+<p>Lastly, we show our model can do singing conversion even though <strong>no singing samples are seen during training</strong>. Because both the conversion model and vocoder are trained with only speech data, there are some artifacts that resemble speech patterns. We compare our model results with Polyak et. al. Audio samples from Polyak et. al. are taken directly from their <a href="https://singing-conversion.github.io/">online supplement page</a>. We use the same sources from NUS-48 singing dataset and target speakers available in the selected 20 speakers.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">VKOW → p259</th>
+      <th style="text-align: center">MCUR → p233</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Singing/p259/source.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Singing/p233/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Singing/p259/target.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Singing/p233/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Polyak et. al.</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Singing/p259/cd.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Singing/p233/cd.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>StarGANv2-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Singing/p259/starganv2.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/VCTK/Singing/p233/starganv2.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="esd-dataset">ESD Dataset</h2>
+<p>To demonstrate the ability of converting into stylistic speech, we train another model with 10 English speakers from the <a href="https://github.com/HLTSingapore/Emotional-Speech-Data">Emotional Speech Dataset</a> (ESD). Our model can convert a neutral reading into an emotional speech. We also demostrate the ability of converting from emotional speech to emotional speech. This shows that our model can be applied to movie dubbing with proper source input. All samples are in 16k Hz.</p>
+
+<h3 id="emotional-to-emotional">Emotional to Emotional</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Female to Male</th>
+      <th style="text-align: center">Male to Female</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/F2M/surprise/source.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/M2F/surprise/surprise/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Reference</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/F2M/surprise/reference.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/M2F/surprise/surprise/reference.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/F2M/surprise/converted.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/M2F/surprise/surprise/converted.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="neutral-to-emotional">Neutral to Emotional</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Female to Male</th>
+      <th style="text-align: center">Male to Female</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/F2M/plain/source.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/M2F/plain/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Reference (neutral)</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/F2M/plain/plain/reference.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/M2F/plain/plain/reference.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted (neutral)</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/F2M/plain/plain/converted.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/M2F/plain/plain/converted.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Reference (emotional)</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/F2M/plain/emotional/reference.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/M2F/plain/sad/reference.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted (emotional)</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/F2M/plain/emotional/converted.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/EMD/M2F/plain/sad/converted.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h2 id="jvs-dataset">JVS Dataset</h2>
+<p><a href="https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus">JVS dataset</a> is a multi-speaker Japanese speech dataset that contains both regular and falsetto speech. We train a model with 130 regular speech utterances and 10 falsetto speech utterances from 10 randomly selected speakers. Our model can convert a regular speech into both regular and falsetto voices from a source of regular speech. We also show that our model can do crosslinual conversion with English source speakers from VCTK dataset, albeit trained with only Japanese corpus. All samples are in 24k Hz.</p>
+
+<h3 id="female-to-male-jvs-084--jvs-006">Female to Male (JVS 084 → JVS 006)</h3>
+
+<table style="width: 121%;margin-left: -75px;text-align: center;">
+    <thead>
+        <tr>
+            <th>Source</th>
+            <th>Reference</th>
+            <th>Converted Speech</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/F2M/source_084.wav" />&lt;/source&gt; </audio> </td>
+            <td><audio controls="controls"> <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/F2M/chest_006/reference.wav" />&lt;/source&gt; </audio>(regular speech)</td>
+            <td><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/F2M/chest_006/converted.wav" />&lt;/source&gt; </audio></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/F2M/falsetto_006/reference.wav" />&lt;/source&gt; </audio>(falsetto speech)</td>
+            <td><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/F2M/falsetto_006/converted.wav" />&lt;/source&gt; </audio></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="male-to-female-jvs-099--jvs-010">Male to Female (JVS 099 → JVS 010)</h3>
+
+<table style="width: 121%;margin-left: -75px;text-align: center;">
+    <thead>
+        <tr>
+            <th>Source</th>
+            <th>Reference</th>
+            <th>Converted Speech</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/M2F/source.wav" />&lt;/source&gt; </audio> </td>
+            <td><audio controls="controls"> <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/M2F/chest_010/reference.wav" />&lt;/source&gt; </audio>(regular speech)</td>
+            <td><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/M2F/chest_010/converted.wav" />&lt;/source&gt; </audio></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/M2F/falsetto_010/reference.wav" />&lt;/source&gt; </audio>(falsetto speech)</td>
+            <td><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/style/M2F/falsetto_010/converted.wav" />&lt;/source&gt; </audio></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="cross-lingual-conversion-1">Cross-lingual Conversion</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Female to Male</th>
+      <th style="text-align: center">Male to Female</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/crosslingual/F2M/source.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/crosslingual/M2F/source.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/crosslingual/F2M/reference.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/crosslingual/M2F/target.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Converted</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/crosslingual/F2M/converted.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/JVS/crosslingual/M2F/converted.wav" />&lt;/source&gt;  </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ablation-study">Ablation Study</h2>
+
+<p>We present two samples of ablation study for conditions described in Table 2 in our paper on VCTK dataset.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Sample 1 (p233 → p259)</th>
+      <th style="text-align: center">Sample 2 (p273 → p244)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Source</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p233_to_p259/original.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p273_to_p244/original.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Target</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p233_to_p259/reference.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p273_to_p244/reference.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Full StarGANv2-VC</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p233_to_p259/full.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p273_to_p244/full.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>No F0 Consistency Loss</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p233_to_p259/no_F0.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p273_to_p244/no_F0.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>No Speech Consistency Loss</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p233_to_p259/no_ASR.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p273_to_p244/no_asr.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>No Norm Consistency Loss</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p233_to_p259/no_norm.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p273_to_p244/no_norm.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>No Adversarial Source Classifier Loss</strong></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p233_to_p259/no_advcls.wav" />&lt;/source&gt; </audio></td>
+      <td style="text-align: center"><audio controls="controls">  <source type="audio/wav" src="https://raw.githubusercontent.com/starganv2-vc/starganv2-vc.github.io/main/wav/Ablation/p273_to_p244/no_advcls.wav" />&lt;/source&gt; </audio></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
